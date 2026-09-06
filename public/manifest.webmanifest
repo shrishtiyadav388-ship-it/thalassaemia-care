@@ -1,0 +1,12 @@
+{
+ "id":"/",
+ "name":"Care space",
+ "short_name":"Care space",
+ "description":"Your personal care organizer",
+ "start_url":"/",
+ "scope":"/",
+ "display":"standalone",
+ "background_color":"#f3f6f9",
+ "theme_color":"#142d48",
+ "icons":[{"src":"/favicon.svg","sizes":"any","type":"image/svg+xml","purpose":"any"}]
+}

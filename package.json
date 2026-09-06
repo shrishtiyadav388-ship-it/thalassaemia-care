@@ -1,0 +1,19 @@
+{
+  "name": "thalassaemia-care",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A personal care web application for transfusion-dependent thalassaemia.",
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check server.mjs && node --check lib/domain.mjs && node --check public/app.js",
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "web-push": "3.6.7"
+  }
+}

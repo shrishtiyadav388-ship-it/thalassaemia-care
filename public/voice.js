@@ -1,0 +1,18 @@
+// Original supportive copy. No promises about health outcomes or pressure to feel positive.
+const encouragements = [
+  ['There is room for your dreams here.', 'Your studies, work, friendships, and hopes matter. Take the next step at a pace that works for you.'],
+  ['You do not have to feel strong every day.', 'A difficult day does not erase your effort. Rest, questions, and asking for support all belong in your care.'],
+  ['One thing at a time is enough.', 'You can start with the next small step. There is no score to chase and no perfect patient to become.'],
+  ['Your voice belongs in your care.', 'Bring your questions, worries, and hopes to your care team. You deserve to be heard.'],
+  ['Make room for what brings you joy.', 'There is space for interests, relationships, and goals alongside your care. Your journey can move at your own pace.'],
+  ['Support is a strength you can share.', 'When care feels heavy, consider reaching out to someone you trust or your care team. You deserve help with the load.'],
+  ['Today can be a gentler day.', 'A pause can be part of moving forward. Take care of the person behind the appointments, too.']
+];
+export function encouragement(day) {
+  const index=Math.floor(Date.parse(`${day}T12:00:00Z`)/86400000)%encouragements.length;
+  const [title,body]=encouragements[(index+encouragements.length)%encouragements.length];
+  return `<section class="encouragement" aria-label="A little encouragement"><span class="eyebrow">A NOTE FOR TODAY</span><h2>${title}</h2><p>${body}</p></section>`;
+}
+export function storyPage() {
+  return `<section class="founder-letter"><p class="eyebrow">A NOTE FROM SHRISHTI</p><h2>I made this with our everyday lives in mind.</h2><p>My own experience with thalassaemia is why I wanted to build this space. Keeping track of transfusions, medicines, appointments, and reports can be a lot to hold in your head.</p><p>I wanted somewhere to put those details down. Somewhere that feels kind on the days when you have energy, and on the days when you don’t.</p><p>Having thalassaemia major does not make your dreams less important. You deserve room for learning, work, friendship, love, creativity, and whatever matters to you. You also deserve rest and support, without having to prove how strong you are.</p><p>This app is a small part of that idea: help with remembering, space for your questions, and your care details together. Your medical decisions stay with you and your care team.</p><p class="signature">With care,<br><strong>Shrishti</strong></p></section><div class="settings-grid"><section class="panel"><h2>A companion to your care team</h2><p class="subtle">Your treatment is personal. Record your clinician’s plan here, and check with them before changing a medicine or transfusion appointment. Your hemoglobin result is one part of a bigger picture.</p><p class="subtle">If you feel seriously unwell or need urgent help, contact local emergency services or your care team. This app is not monitored for emergencies.</p></section><section class="panel"><h2>Learning and support</h2><p class="subtle">Reliable information can help you ask questions and take part in your care. These resources come from the Thalassaemia International Federation; they are not a substitute for advice about your own treatment.</p><p><a href="https://thalassaemia.org.cy/platform-patients/" target="_blank" rel="noopener noreferrer">Patient and parent learning resources ↗</a></p><p><a href="https://www.ncbi.nlm.nih.gov/books/NBK614233/" target="_blank" rel="noopener noreferrer">Lifestyle and quality of life guidance ↗</a></p><p><a href="https://thalassaemia.org.cy/" target="_blank" rel="noopener noreferrer">Thalassaemia International Federation ↗</a></p></section></div>`;
+}
